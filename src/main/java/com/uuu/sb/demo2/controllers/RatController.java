@@ -1,4 +1,5 @@
 package com.uuu.sb.demo2.controllers;
+import com.uuu.sb.demo2.model.rat;
 import com.uuu.sb.demo2.servive.RatService;
 import com.uuu.sb.demo2.servive.RatServiceImp;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,12 +10,24 @@ import java.io.FileNotFoundException;
 
 @RestController
 public class RatController {
-    @RequestMapping("/rat")
-    public String rat() throws FileNotFoundException {
-        String result ;
+    @RequestMapping("/rat_run")
+    public String rat_run() {
         RatServiceImp RatService = new RatServiceImp();
-        result= RatService.rat_run();
-        return result;
+        return RatService.rat_run();
+
+    }
+    @RequestMapping("/get_rat_move")
+    public String get_rat_move() {
+        RatServiceImp RatService = new RatServiceImp();
+        rat rat = RatService.get_rat_move();
+        return (rat.move);
+
+    }
+    @RequestMapping("/update_rat_move")
+    public String update_rat_move() {
+        RatServiceImp RatService = new RatServiceImp();
+        rat rat = RatService.update_rat_move("飛");
+        return (rat.move);
 
     }
 }

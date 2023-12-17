@@ -1,17 +1,23 @@
 package com.uuu.sb.demo2.servive;
 
+import com.uuu.sb.demo2.model.rat;
 import org.hibernate.annotations.Comment;
 import org.hibernate.annotations.Comments;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
-public class RatServiceImp {
+@Component
+public class RatServiceImp implements RatService{
     public static java.util.Stack<String> path = new java.util.Stack<String>();
     public static int c = 1;
 
-    public String rat_run() throws FileNotFoundException {
+
+    @Override
+    public String rat_run(){
+
         String result ="";
         int maze[][] = new int[12][12];
         ready_maze(maze);
@@ -63,7 +69,19 @@ public class RatServiceImp {
         return result;
     }
 
-    private void ready_maze(int maze[][]) throws FileNotFoundException {
+    @Override
+    public rat get_rat_move() {
+        return null;
+    }
+
+    @Override
+    public rat update_rat_move(String move) {
+        //some update move
+        return null;
+    }
+
+
+    private void ready_maze(int maze[][]){
         int n = 12;
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 12; j++) {
