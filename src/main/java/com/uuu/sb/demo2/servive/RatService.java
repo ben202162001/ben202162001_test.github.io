@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-
+@Service
 public interface RatService {
     public String rat_run();
     rat get_rat_move ();

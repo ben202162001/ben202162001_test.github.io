@@ -71,13 +71,18 @@ public class RatServiceImp implements RatService{
 
     @Override
     public rat get_rat_move() {
-        return null;
+        //非注入，不會更新值
+        rat rat =new rat();
+        rat.getMove();
+        return rat;
     }
 
     @Override
     public rat update_rat_move(String move) {
-        //some update move
-        return null;
+        //非注入，不會更新值
+        rat rat =new rat();
+        rat.setMove(move);
+        return rat;
     }
 
 

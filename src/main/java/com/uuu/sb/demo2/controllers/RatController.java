@@ -12,22 +12,21 @@ import java.io.FileNotFoundException;
 public class RatController {
     @RequestMapping("/rat_run")
     public String rat_run() {
-        RatServiceImp RatService = new RatServiceImp();
+        RatService RatService = new RatServiceImp();
         return RatService.rat_run();
 
     }
     @RequestMapping("/get_rat_move")
     public String get_rat_move() {
-        RatServiceImp RatService = new RatServiceImp();
+        RatService RatService = new RatServiceImp();
         rat rat = RatService.get_rat_move();
-        return (rat.move);
-
+        return (rat.getMove());
     }
     @RequestMapping("/update_rat_move")
     public String update_rat_move() {
-        RatServiceImp RatService = new RatServiceImp();
+        RatService RatService = new RatServiceImp();
         rat rat = RatService.update_rat_move("飛");
-        return (rat.move);
+        return (rat.getMove());
 
     }
 }
