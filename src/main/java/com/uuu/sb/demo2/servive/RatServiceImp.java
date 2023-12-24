@@ -1,5 +1,7 @@
 package com.uuu.sb.demo2.servive;
 
+import com.uuu.sb.demo2.dao.RatDao;
+import com.uuu.sb.demo2.dao.RatDaoImp;
 import com.uuu.sb.demo2.model.rat;
 import org.hibernate.annotations.Comment;
 import org.hibernate.annotations.Comments;
@@ -14,6 +16,10 @@ public class RatServiceImp implements RatService{
     public static java.util.Stack<String> path = new java.util.Stack<String>();
     public static int c = 1;
 
+//    @Autowired
+//    RatDao RatDao;
+    //沒有用到注入
+    RatDao RatDao = new RatDaoImp();
 
     @Override
     public String rat_run(){
@@ -71,17 +77,13 @@ public class RatServiceImp implements RatService{
 
     @Override
     public rat get_rat_move() {
-        //非注入，不會更新值
-        rat rat =new rat();
-        rat.getMove();
+        rat rat = RatDao.get_rat_move_dao();
         return rat;
     }
 
     @Override
     public rat update_rat_move(String move) {
-        //非注入，不會更新值
-        rat rat =new rat();
-        rat.setMove(move);
+        rat rat = RatDao.update_rat_move_dao(move);
         return rat;
     }
 
