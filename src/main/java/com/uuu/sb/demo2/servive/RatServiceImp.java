@@ -18,8 +18,9 @@ public class RatServiceImp implements RatService{
 
 //    @Autowired
 //    RatDao RatDao;
+
     //沒有用到注入
-    RatDao RatDao = new RatDaoImp();
+    RatDao RatDao=new RatDaoImp();
 
     @Override
     public String rat_run(){
