@@ -16,12 +16,8 @@ public class RatServiceImp implements RatService{
     public static java.util.Stack<String> path = new java.util.Stack<String>();
     public static int c = 1;
 
-//    @Autowired
-//    RatDao RatDao;
-
-    //沒有用到注入
-    RatDao RatDao=new RatDaoImp();
-
+    @Autowired
+    RatDao RatDao;
     @Override
     public String rat_run(){
 
@@ -87,7 +83,6 @@ public class RatServiceImp implements RatService{
         rat rat = RatDao.update_rat_move_dao(move);
         return rat;
     }
-
 
     private void ready_maze(int maze[][]){
         int n = 12;

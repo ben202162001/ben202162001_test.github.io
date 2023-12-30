@@ -15,7 +15,6 @@ public class RatController {
     @RequestMapping("/rat_run")
     public String rat_run() {
         return RatService.rat_run();
-
     }
     @RequestMapping("/get_rat_move")
     public String get_rat_move() {
@@ -26,6 +25,5 @@ public class RatController {
     public String update_rat_move() {
         rat rat = RatService.update_rat_move("飛");
         return (rat.getMove());
-
     }
 }
